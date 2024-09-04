@@ -1,0 +1,105 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/init",
+    "definitions": {
+        "init": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "dev": {
+                    "$ref": "#/definitions/env"
+                },
+                "prod": {
+                    "$ref": "#/definitions/env"
+                }
+            },
+            "required": [
+                "dev",
+                "prod"
+            ],
+            "title": "init"
+        },
+        "env": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "gi": {
+                    "$ref": "#/definitions/tenant"
+                }
+            },
+            "required": [
+                "gi"
+            ],
+            "title": "Environment"
+        },
+        "tenant": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "auth0_domain": {
+                    "type": "string"
+                },
+                "auth0_audience": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "auth0_client_id": {
+                    "type": "string"
+                },
+                "projects": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/Project"
+                    }
+                }
+            },
+            "required": [
+                "auth0_audience",
+                "auth0_client_id",
+                "auth0_domain",
+                "projects"
+            ],
+            "title": "Tenant"
+        },
+        "Project": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "clients": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "database-connections": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "resource-servers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "actions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "actions",
+                "clients",
+                "database-connections",
+                "resource-servers"
+            ],
+            "title": "Project"
+        }
+    }
+}

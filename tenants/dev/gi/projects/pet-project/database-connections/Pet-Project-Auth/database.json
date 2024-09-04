@@ -1,0 +1,41 @@
+{
+  "options": {
+    "mfa": {
+      "active": true,
+      "return_enroll_settings": true
+    },
+    "validation": {
+      "username": {
+        "max": 15,
+        "min": 1
+      }
+    },
+    "disable_signup": false,
+    "passwordPolicy": "good",
+    "passkey_options": {
+      "challenge_ui": "both",
+      "local_enrollment_enabled": true,
+      "progressive_enrollment_enabled": true
+    },
+    "strategy_version": 2,
+    "requires_username": false,
+    "authentication_methods": {
+      "passkey": {
+        "enabled": false
+      },
+      "password": {
+        "enabled": true
+      }
+    },
+    "brute_force_protection": true
+  },
+  "strategy": "auth0",
+  "name": "Pet-Project-Auth",
+  "is_domain_connection": false,
+  "realms": [
+    "Pet-Project-Auth"
+  ],
+  "enabled_clients": [
+    "Pet Project"
+  ]
+}

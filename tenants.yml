@@ -1,0 +1,46 @@
+dev:
+  gi:
+    # https://auth0.com/docs/deploy-monitor/deploy-cli-tool/configure-the-deploy-cli
+    auth0_domain: g-and-i-dev.au.auth0.com
+    auth0_audience: https://g-and-i-dev.au.auth0.com/api/v2/
+    auth0_client_id: cyYrvkWx45SMK6aSXJLJemetxnW1T74l
+    projects:
+      # smart-hire:
+      #   clients:
+      #     - SmartHire Candidate.json
+      #     - SmartHire Hirer.json
+      #   database-connections:
+      #     - SmartHire-Hirer-Auth
+      #     - SmartHire-Candidate-Auth
+      #   resource-servers:
+      #     - SmartHire-Hirer-API.json
+      #   actions:
+      #     - smarthire-flow
+      #     - whitelist-ip
+      pet-project:
+        clients:
+          - Pet Project.json
+        database-connections:
+          - Pet-Project-Auth
+        resource-servers:
+          - Pet-Project-API.json      
+        actions:
+          - pet-project-login
+      xyz:
+        clients:
+          - XYZ Candidate.json
+        database-connections:
+          - Username-Password-Authentication
+        resource-servers:
+          - XYZ-Candidate-API.json
+        actions:
+          - xyz-login
+
+prod:
+  gi:
+    auth0_domain: g-and-i-dev.au.auth0.com
+    auth0_audience: https://g-and-i-dev.au.auth0.com/api/v2/
+    auth0_client_id: cyYrvkWx45SMK6aSXJLJemetxnW1T74l
+    projects:
+      - smart-hire
+      - xyz
